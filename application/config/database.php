@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'c-ileasingmysqlserver.mysql.database.azure.com',
+	'username' => 'ServerAdmin@c-ileasingmysqlserver',
+	'password' => '@!234getaXlease',
 	'database' => 'skillcentral',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
