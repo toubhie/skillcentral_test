@@ -101,9 +101,9 @@
                                     <p class="price text-right"><?php echo site_phrase('free'); ?></p>
                                 <?php else: ?>
                                     <?php if ($top_course['discount_flag'] == 1): ?>
-                                        <p class="price text-right"><small><?php echo currency($top_course['price']); ?></small><?php echo currency($top_course['discounted_price']); ?></p>
+                                        <p class="price text-right"><small><?php echo currency(number_format($top_course['price'], 0, ".", ",")); ?></small><?php echo currency($top_course['discounted_price']); ?></p>
                                     <?php else: ?>
-                                        <p class="price text-right"><?php echo currency($top_course['price']); ?></p>
+                                        <p class="price text-right"><?php echo currency(number_format($top_course['price'], 0, ".", ",")); ?></p>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
@@ -235,9 +235,9 @@
                                     <p class="price text-right"><?php echo site_phrase('free'); ?></p>
                                 <?php else: ?>
                                     <?php if ($latest_course['discount_flag'] == 1): ?>
-                                        <p class="price text-right"><small><?php echo currency($latest_course['price']); ?></small><?php echo currency($latest_course['discounted_price']); ?></p>
+                                        <p class="price text-right"><small><?php echo currency(number_format($latest_course['price'], 0, ".", ",")); ?></small><?php echo currency(number_format($latest_course['price'], 0, ".", ",")); ?></p>
                                     <?php else: ?>
-                                        <p class="price text-right"><?php echo currency($latest_course['price']); ?></p>
+                                        <p class="price text-right"><?php echo currency(number_format($latest_course['price'], 0, ".", ",")); ?></p>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>

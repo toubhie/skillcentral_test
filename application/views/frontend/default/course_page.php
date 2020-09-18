@@ -197,12 +197,12 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 <?php else: ?>
                   <?php if ($other_realted_course['discount_flag'] == 1): ?>
                     <span class="item-price">
-                      <span class="original-price"><?php echo currency($other_realted_course['price']); ?></span>
-                      <span class="current-price"><?php echo currency($other_realted_course['discounted_price']); ?></span>
+                      <span class="original-price"><?php echo currency(number_format($other_realted_course['price'], 0, ".", ",")); ?></span>
+                      <span class="current-price"><?php echo currency(number_format($other_realted_course['discounted_price'], 0, ".", ",")); ?></span>
                     </span>
                   <?php else: ?>
                     <span class="item-price">
-                      <span class="current-price"><?php echo currency($other_realted_course['price']); ?></span>
+                      <span class="current-price"><?php echo currency(number_format($other_realted_course['price'], 0, ".", ",")); ?></span>
                     </span>
                   <?php endif; ?>
                 <?php endif; ?>
@@ -384,12 +384,12 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
           <span class = "current-price"><span class="current-price"><?php echo site_phrase('free'); ?></span></span>
         <?php else: ?>
           <?php if ($course_details['discount_flag'] == 1): ?>
-            <span class = "current-price"><span class="current-price"><?php echo currency($course_details['discounted_price']); ?></span></span>
-            <span class="original-price"><?php echo currency($course_details['price']) ?></span>
-            <input type="hidden" id = "total_price_of_checking_out" value="<?php echo currency($course_details['discounted_price']); ?>">
+            <span class = "current-price"><span class="current-price"><?php echo currency(number_format($course_details['discounted_price'], 0, ".", ",")); ?></span></span>
+            <span class="original-price"><?php echo currency(number_format($course_details['price'], 0, ".", ",")); ?></span>
+            <input type="hidden" id = "total_price_of_checking_out" value="<?php echo currency(number_format($course_details['discounted_price'], 0, ".", ",")); ?>">
           <?php else: ?>
-            <span class = "current-price"><span class="current-price"><?php echo currency($course_details['price']); ?></span></span>
-            <input type="hidden" id = "total_price_of_checking_out" value="<?php echo currency($course_details['price']); ?>">
+            <span class = "current-price"><span class="current-price"><?php echo currency(number_format($course_details['price'], 0, ".", ",")); ?></span></span>
+            <input type="hidden" id = "total_price_of_checking_out" value="<?php echo currency(number_format($course_details['price'], 0, ".", ",")); ?>">
           <?php endif; ?>
         <?php endif; ?>
       </div>
@@ -416,7 +416,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
         <?php if ($course_details['is_locked'] == 1): ?>
           <div class="buy-btns">
             <a href="javascript::void(0)" class="btn btn-buy-now" onclick="showPasswordModal()"><?php echo get_phrase('get_enrolled'); ?></a>
-          
+
           </div>
         <?php else: ?>
           <?php if ($course_details['is_free_course'] == 1): ?>
@@ -460,7 +460,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
           <?php if ($course_details['is_locked'] == 1) { ?>
                   <li><i class="fas fa-award"></i><?php echo site_phrase('private_course'); ?></li>
           <?php } ?>
-                        
+
         </ul>
       </div>
     </div>
@@ -609,7 +609,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 
     function showPasswordModal()
     {
-      jQuery('#password-modal').modal('show', {backdrop: 'true'});     
+      jQuery('#password-modal').modal('show', {backdrop: 'true'});
     }
 
     function checkPassword(){
@@ -634,10 +634,10 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 window.location.replace("<?php echo site_url('home/get_enrolled_to_free_course/'.$course_details['id']); ?>?>");
             } else{
               jQuery('#password-error').html('Password Incorrect');
-            }            
+            }
           }
         });
-      }     
+      }
     }
 
     function handleBuyNow(elem) {
