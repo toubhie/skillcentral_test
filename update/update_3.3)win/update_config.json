@@ -1,0 +1,23 @@
+{
+    "directory": [],
+    "sql_file": "",
+    "files": [
+      {
+          "root_directory"    : "update/update_3.2/views/backend/admin/payment_settings.php",
+          "update_directory"  : "application/views/backend/admin/payment_settings.php"
+      },
+      {
+          "root_directory"    : "update/update_3.2/views/frontend/default/shopping_cart_inner_view.php",
+          "update_directory"  : "application/views/frontend/default/shopping_cart_inner_view.php"
+      },
+      {
+          "root_directory"    : "update/update_3.2/views/frontend/default/shopping_cart.php",
+          "update_directory"  : "application/views/frontend/default/shopping_cart.php"
+      },
+      {
+          "root_directory"    : "update/update_3.2/views/payment/payment_gateway.php",
+          "update_directory"  : "application/views/payment/payment_gateway.php"
+      }
+    ]
+  }
+  
