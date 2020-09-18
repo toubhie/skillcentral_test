@@ -192,7 +192,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 </span>
                 <?php if ($other_realted_course['is_free_course'] == 1): ?>
                   <span class="item-price">
-                    <span class="current-price"><?php echo site_phrase('free'); ?></span>
+                    <span class="current-price" id=""><?php echo site_phrase('free'); ?></span>
                   </span>
                 <?php else: ?>
                   <?php if ($other_realted_course['discount_flag'] == 1): ?>
