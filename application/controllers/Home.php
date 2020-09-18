@@ -246,6 +246,7 @@ class Home extends CI_Controller {
             if (isset($_GET['password']) && isset($_GET['course_id'])) {
                 //$entered_password = sha1(html_escape($this->input->post('password')));
                 $entered_password = html_escape($this->input->get('password'));
+                $entered_password = sha1($entered_password);
                 $course_id = $this->input->get('course_id');
 
                 $course_password = $this->crud_model->get_course_password($course_id);

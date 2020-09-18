@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>   
 	<title><?php echo $page_title.' | '.get_settings('system_name'); ?></title>
 
 	<meta charset="utf-8">

@@ -467,6 +467,8 @@ class Crud_model extends CI_Model
         $data['certificate_price'] = $this->input->post('certificate_price');
         $data['is_free_certificate'] = $this->input->post('is_free_certificate');
         $data['when_to_pay_for_certificate'] = $this->input->post('when_to_pay_for_certificate');
+        $data['is_locked'] = $this->input->post('is_private_course');
+        $data['password'] = sha1(html_escape($this->input->post('course_password')));
 
         if ($this->input->post('course_overview_url') != "") {
             $data['course_overview_provider'] = html_escape($this->input->post('course_overview_provider'));
@@ -564,6 +566,8 @@ class Crud_model extends CI_Model
         $data['certificate_price'] = $this->input->post('certificate_price');
         $data['is_free_certificate'] = $this->input->post('is_free_certificate');
         $data['when_to_pay_for_certificate'] = $this->input->post('when_to_pay_for_certificate');
+        $data['is_locked'] = $this->input->post('is_private_course');
+        $data['password'] = sha1(html_escape($this->input->post('course_password')));
 
         if ($this->input->post('course_overview_url') != "") {
             $data['course_overview_provider'] = html_escape($this->input->post('course_overview_provider'));

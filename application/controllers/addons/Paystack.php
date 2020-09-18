@@ -14,11 +14,10 @@ class Paystack extends CI_Controller {
       if (!$this->session->userdata('cart_items')) {
           $this->session->set_userdata('cart_items', array());
       }
-
-       /*ADDON SPECIFIC MODELS*/
-        /*ADDON SPECIFIC MODELS*/
-        $this->load->model('addons/Certificate_model','certificate_model');
-      //  $this->load->model('Email_model','email_model');
+ 
+      /*ADDON SPECIFIC MODELS*/
+      $this->load->model('addons/Certificate_model','certificate_model');
+      $this->load->model('addons/Email_model','email_model');
 
   }
 

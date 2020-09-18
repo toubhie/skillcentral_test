@@ -128,6 +128,22 @@ class Email_model extends CI_Model {
 		$this->send_smtp_mail($email_msg, $subject, $user_details['email'], $email_from);
 	}
 
+	public function notify_on_live_class_certificate_generate($user_id = "", $course_id = "", $certificate_link = "") {
+		$checker = array(
+			'course_id' => $course_id,
+			'student_id' => $user_id
+		);
+		$result = $this->db->get_where('certificates', $checker)->row_array();
+		$course_details    = $this->crud_model->get_course_by_id($course_id)->row_array();
+		$user_details = $this->user_model->get_all_user($user_id)->row_array();
+		$email_from = get_settings('system_email');
+		$subject 		= "Course Completion Notification";
+		$email_msg	=	"<b>Congratulations!!</b> ". $user_details['first_name']." ".$user_details['last_name'].",";
+		$email_msg	.=	"<p>You have successfully completed the course named, <b>".$course_details['title'].".</b></p>";
+		$email_msg	.=	"<p>You can get your course completion certificate from here <b>".$certificate_link.".</b></p>";
+		$this->send_smtp_mail($email_msg, $subject, $user_details['email'], $email_from);
+	}
+
 	public function suspended_offline_payment($user_id = ""){
 		$user_details = $this->user_model->get_all_user($user_id)->row_array();
 		$email_from = get_settings('system_email');

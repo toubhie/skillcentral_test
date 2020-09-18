@@ -45,6 +45,21 @@ class Certificate extends CI_Controller
         }
     }
 
+    function check_live_class_certificate_eligibility($course_id) {
+        if (certificate_eligibility($course_id)) {
+            echo certificate_eligibility($course_id);
+        }else{
+            $course_progress = 100;
+
+            if ($course_progress == 100) {
+                $this->certificate_model->check_live_class_certificate_eligibility($course_id);
+                echo 1;
+            }else{
+                echo 0;
+            }
+        }
+    }
+
 
     //GENERATE CERTIFICATE
     public function generate_certificate($certificate_identifier = "") {

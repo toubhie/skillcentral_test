@@ -9,6 +9,27 @@ class Liveclass_model extends CI_Model
     }
 
     public function update_live_class($course_id) {
+        if (!empty($this->input->post('live_class_schedule_date')) && !empty($this->input->post('live_class_schedule_time')) && !empty($this->input->post('teams_attendee_url'))) {
+            $data['date']                  = strtotime($this->input->post('live_class_schedule_date'));
+            $data['time']                  = strtotime($this->input->post('live_class_schedule_time'));
+            $zoom_meeting_id               = $this->input->post('zoom_meeting_id');
+            $trimmed_meeting_id            = preg_replace('/\s+/', '', $zoom_meeting_id);
+            $data['zoom_meeting_id']       = str_replace("-", "", $trimmed_meeting_id);
+            $data['zoom_meeting_password'] = $this->input->post('zoom_meeting_password');
+            $data['teams_attendee_url']    = $this->input->post('teams_attendee_url');
+            $data['note_to_students']      = $this->input->post('note_to_students');
+            $data['course_id']             = $course_id;
+            $previous_data = $this->db->get_where('live_class', array('course_id' => $course_id))->num_rows();
+            if ($previous_data > 0) {
+                $this->db->where('course_id', $course_id);
+                $this->db->update('live_class', $data);
+            }else{
+                $this->db->insert('live_class', $data);
+            }
+        }
+    }
+
+    public function update_live_class_old($course_id) {
         if (!empty($this->input->post('live_class_schedule_date')) && !empty($this->input->post('live_class_schedule_time')) && !empty($this->input->post('zoom_meeting_id')) && !empty($this->input->post('zoom_meeting_password'))) {
             $data['date']                  = strtotime($this->input->post('live_class_schedule_date'));
             $data['time']                  = strtotime($this->input->post('live_class_schedule_time'));

@@ -16,6 +16,17 @@
     }
 </script>
 
+<script type="text/javascript">
+
+$('.course-password-stuffs').slideUp();
+  function toggleCoursePasswordFields(elem) {
+    if($("#"+elem).is(':checked')){
+      $('.course-password-stuffs').slideDown();
+    }else
+      $('.course-password-stuffs').slideUp();
+    }
+</script>
+
 <?php if ($page_name == 'courses-server-side'): ?>
   <script type="text/javascript">
   jQuery(document).ready(function($) {

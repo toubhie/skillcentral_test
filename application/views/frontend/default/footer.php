@@ -4,7 +4,8 @@
       <div class="col-md-6">
         <p class="copyright-text">
           <a href=""><img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" class="d-inline-block" width="110"></a>
-          <a href="<?php echo get_settings('footer_link'); ?>" target="_blank"><?php echo get_settings('footer_text'); ?></a>
+          <!--<a href="<?php //echo get_settings('footer_link'); ?>" target="_blank"><?php //echo get_settings('footer_text'); ?></a> -->
+          <?php echo get_settings('footer_text'); ?>
         </p>
       </div>
       <div class="col-md-6">
@@ -16,7 +17,7 @@
             <a class="nav-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo site_phrase('privacy_policy'); ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/terms_and_condition'); ?>"><?php echo site_phrase('terms_and_condition'); ?></a>
+            <a class="nav-link" href="<?php echo site_url('home/cookie_policy'); ?>"><?php echo site_phrase('cookie_policy'); ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('home/login'); ?>">
